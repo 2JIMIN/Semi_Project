@@ -1,0 +1,45 @@
+#content_1{
+    width: 15%;
+    text-align: center;
+}
+#content_1_1{
+    height: 10%;
+    text-align: left;
+    padding-top: 15px;
+    overflow: visible;
+    width: 180px;
+    height: 60px;
+    line-height: 20px;
+    padding: 20px 12px;
+    background-color: #1a3d89;
+    font-family: "Malgun Gothic";
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+}
+#content_1_2{
+    height: 7%;
+    text-align: left;
+    padding-top: 8px;
+}
+#content_1_3{
+    height: 7%;
+    text-align: left;
+    padding-top: 8px;
+}
+#content_1_4{
+    height: 7%;
+    text-align: left;
+    padding-top: 8px;
+}
+#content_1>div>a{
+    text-decoration: none;
+    color: black;
+    display: block;
+    position: relative;
+    padding: 4.8px 12px;
+    color: #333;
+    font-family: "Malgun Gothic";
+    font-size: 14px;
+    font-weight: 700;
+}

@@ -1,0 +1,93 @@
+/* div{
+    box-sizing: border-box;
+    border: 1px solid black;
+} */
+.wrap{
+    width: 1000px;
+    height: 600px;
+    margin: auto; /*좌우로 자동 정렬(정가운데)*/
+}
+/*크게 세가지 영역으로 나눈다*/
+/* header / content / fotter */
+
+.wrap>div{ /*wrap 자식 div요소 선택*/
+    width: 100%;
+}
+#header{
+    height: 20%;
+}
+#footer{
+    height: 20%;
+}
+#content{
+    height: 60%;
+}
+#header>div{
+    float: left;
+    height: 100%;
+}
+#header_1{
+    width: 35%;
+}
+#header_2{
+    width: 30%;
+}
+#header_3{
+    width: 35%;
+}
+#logo{
+    width: 100%;
+    height: 100%;
+}
+#content_1{
+    height: 20%;
+    text-align: center;
+}
+#content_2{
+    height: 10%;
+}
+#content_3{
+    height: 30%;
+    text-align: center;
+}
+p{
+    font-size: 15px;
+    line-height: 1.33;
+    font-family: "Malgun Gothic";
+}
+#content_4{
+    height: 20%;
+    text-align: center;
+    color: gray;
+    font-family: "Malgun Gothic";
+    font-size: 13px;
+}
+#content_5{
+    height: 20%;
+}
+#join{
+    padding-top: 20px;
+    font-family: "Malgun Gothic";
+    font-size:16px;
+}
+hr{
+    width: 70%
+}
+#btn{
+    margin: auto;
+    display: block;
+    width: 393px;
+    height: 48px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #63cadd;
+    border-color: #63cadd;
+    border-radius: 5px;
+    font-family: "Malgun Gothic";
+}
+#f1{
+    text-align: center;
+    padding-top: 70px;
+    color: #aaa;
+}
+

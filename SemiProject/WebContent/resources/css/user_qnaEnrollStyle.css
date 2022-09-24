@@ -1,0 +1,243 @@
+#header{
+    width: 1500px;
+    height: 120px;
+    margin: auto;
+}
+#header>div, #content>div{
+    float: left;
+    height: 100%;
+}
+#header_1{
+    width: 15%;
+    position: relative;
+}
+#logo{
+    position: absolute;
+    margin: auto;
+    height: 70%;
+    width: 80%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+#header_2{
+    width: 70%;
+    padding-top: 30px;
+}
+#navi{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+#navi>li{
+    float: left; /*방법1*/
+    height: 100%;
+    width: 16%;
+    text-align: center;
+    /*display: inline-block; /*방법2*/
+    /*vertical-align: top; /*방법2*/
+}
+#navi a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+    height: 60%;
+    display: block;
+    line-height: 37px;
+    transform: scale(1); /*방법1*/
+}
+#navi a:hover{
+    font-size: 18px;
+    color: rgb(154, 222, 226);
+}
+#navi>li>ul{
+    display: none;
+    list-style-type: none;
+    padding: 0;
+}
+#navi>li>ul a{
+    font-size: 12px;
+}
+#navi>li>ul a:hover{
+    font-size: 15px;
+    color: rgb(96, 164, 168);
+    background-color: rgb(241, 241, 241);
+}
+#navi>li>a:hover+ul{
+    display: block;
+}
+#navi>li>ul:hover{
+    display: block;
+}
+#header_3{
+    width: 15%;
+    padding-right: 5px;
+    text-align: center;
+}
+#header_3> a{
+    text-decoration: none;
+    margin: 5px;
+    font-size: 12px;
+    color: black;
+}
+#content{
+	width: 1500px;
+    height: 550px;
+    margin: auto;
+}
+#content_1{
+    width: 15%;
+    text-align: center;
+}
+#content_3{
+    width: 0%;
+}
+#content_2{
+    width: 1150px;
+    height:650px;
+}
+#footer{
+	width: 1500px;
+    height: 240px;
+}
+#footer>div{
+    width: 100%;
+}
+#footer_1{
+    height: 25%;
+    padding-top: 8px;
+}
+#footer_2{
+    height: 75%;
+}
+#footer_2>p{
+    width: 100%;
+    margin: 0;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+#p1{
+    height: 80%;
+    padding: 5px 15px;
+}
+#p2{
+    height: 20%;
+    text-align: center;
+}
+#footer_1>a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin: 15px;
+}
+#content_1_1{
+    height: 60px;
+    text-align: left;
+    padding-top: 15px;
+    overflow: visible;
+    width: 180px;
+    height: 60px;
+    line-height: 20px;
+    padding: 20px 12px;
+    background-color: #1a3d89;
+    font-family: "Malgun Gothic";
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+}
+#content_1_2{
+    height: 58.79px;
+    text-align: left;
+    padding-top: 8px;
+}
+#content_1_3{
+    height: 58.79px;
+    text-align: left;
+    padding-top: 8px;
+}
+#content_1_4{
+    height: 58.79px;
+    text-align: left;
+    padding-top: 8px;
+}
+#content_1>div>a{
+    text-decoration: none;
+    color: black;
+    display: block;
+    position: relative;
+    padding: 4.8px 12px;
+    color: #333;
+    font-family: "Malgun Gothic";
+    font-size: 14px;
+    font-weight: 700;
+}
+#content_3{
+    height: 640px;
+}
+#content_3_1{
+    height: 8%;
+    line-height: 36px;
+    padding: 0;
+    margin: 0;
+    font-family: "Malgun Gothic";
+    font-size: 20px;
+    font-weight: 700;
+    padding-top: 8px;
+    border-top: 2px solid #1a3d89;
+    border-bottom: 1px solid #dedede;
+}
+#content_3_2{
+    height: 10%;
+    font-family: "Malgun Gothic";
+    font-size: 15px;
+    font-weight: bold;
+     border-bottom: 1px solid #dedede;
+}
+#content_3_3{
+    height: 10%;
+    font-family: "Malgun Gothic";
+    font-size: 15px;
+    font-weight: bold;
+     border-bottom: 1px solid #dedede;
+}
+#content_3_4{
+    height: 43%;
+    
+    font-family: "Malgun Gothic";
+    font-size: 15px;
+    font-weight: bold;
+     border-bottom: 1px solid #dedede;
+}
+#content_3_5{
+	height:12%;
+	padding-top: 10px;
+	padding-left: 370px;
+}
+
+#formm{
+	height: 640px;
+	width:1150px;
+}
+#btn2{
+	width:84px;
+	height:42.4px;
+	font-family: "Malgun Gothic";
+	color:white;
+}
+.btn3{
+	width:84px;
+	height:42.4px;
+	
+	
+}
+/* #TitleTK{ */
+/* 	border:1px solid black; */
+/* } */
+select{
+	border:1px solid rgb(180,179,179);
+}
+select,#TitleTK,.contextarea:focus{outline-color:#1a3d89}

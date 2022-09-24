@@ -1,0 +1,223 @@
+#header{
+    width: 1000px;
+    height: 120px;
+    margin: auto;
+}
+#header>div{
+    float: left;
+    height: 100%;
+}
+#header_1{
+    width: 15%;
+    position: relative;
+}
+#logo{
+    position: absolute;
+    margin: auto;
+    height: 55%;
+    width: 80%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+#header_2{
+    width: 65%;
+    position: relative;
+}
+#header_2>p{
+    margin: auto;
+    position: absolute;
+    height: 60%;
+    width:80%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    font-size: 45px;
+    vertical-align: middle;
+    font-weight: bold;
+    margin-left: 15px;
+}
+#header_3{
+    width: 20%;
+    text-align: center;
+    position: relative;
+}
+#login{
+    position: absolute;
+    margin: auto;
+    height: 55%;
+    width:80%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+#login>div> a{
+    height: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+}
+#logout:hover{
+    font-weight: bold;
+}
+#content{
+    width: 1000px;
+    height: 680px;
+    margin: auto;
+    position: relative;
+}
+#content_1{
+	float: left;
+    width: 15%;
+    height: 100%;
+    background-color: rgb(154, 222, 226);
+    border-radius: 10px;
+}
+#content_1>div{
+    height: 68px;
+    padding-top: 19px;
+}
+.userMenu, .menu{
+    background-color: rgb(154, 222, 226);
+    width: 100%;
+    height: auto;
+    text-align: center;
+    cursor: pointer;
+    font-size: large;
+}
+.subarea{
+    background-color: rgb(110, 178, 182);
+    width: 100%;
+    display: none;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+}
+.userMenu>a, .subarea a{
+    text-decoration: none;
+    color: black;
+}
+.userMenu a:hover, .menu:hover, p a:hover{
+    font-weight: bold;
+}
+#content_2{
+	float: left;
+	position: absolute;
+	top: 0;
+	left: 150px;
+    width: 820px;
+    height: 100%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+.outer{
+    width: 100%;
+    text-align: center;
+}
+h3{
+    width: 80%;
+    display: inline-block;
+    line-height: 40px;
+}
+.insert{
+    width: 80%;
+    height: 20%;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    display: inline-block;
+    padding-top: 3%;
+    padding-bottom: 1%;
+}
+
+.insert>div{
+    text-align: right;
+}
+.covidList{
+    width: 70%;
+    height: 20%;
+    display: inline-block;
+}
+.insert-covid-info{
+    line-height: 40px;
+    display: inline-block;
+    width: 40%;
+}
+.input-area{
+    width: 0%;
+    font-size: 15px;
+}
+#updateBtn{
+    background-color: rgb(154, 222, 226);
+    width: 70px;
+    height: 40px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    margin: 1%;
+}
+#deleteBtn{
+    background-color: #ff7979;
+    width: 70px;
+    height: 40px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    margin: 1%;
+}
+#backBtn{
+    background-color: rgb(155, 155, 155);
+    width: 70px;
+    height: 40px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    margin: 1%;
+}
+button{
+    cursor:pointer;
+}
+
+/* 입력 테이블 */
+.insert-table{
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: separate;
+	border-spacing: 0 20px;
+
+}
+.input-textarea{
+    height: 100px;
+}
+.input-area{
+    border: 1px solid rgb(150, 150, 150);
+}
+.input-covid-text{
+    height: 100%;
+    width: 100%;
+    resize: none;
+    font-size: 15px;
+    border: 1px solid rgb(150, 150, 150);
+}
+.insert-table th{
+    width: 15%;
+    text-align: right;
+}
+
+
+/* 버튼 영역 */
+.btn-area{
+    width: 100%;
+    height: 20%;
+    display: inline-block;
+    text-align: center;
+}

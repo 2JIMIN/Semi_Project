@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+	<entry key="insertIntOneway">
+		INSERT INTO RESERVATION (ENROLL_NO, BOOKING_NO, DEP_CODE, FLIGHT_NO, DEP_DATE)
+		VALUES(?, ?, ?, ?, ?)
+	</entry>
+	<entry key="insertIntRound">
+		INSERT INTO RESERVATION (ENROLL_NO, BOOKING_NO, DEP_CODE, FLIGHT_NO, DEP_DATE, R_DEP_CODE, R_FLIGHT_NO, R_DEP_DATE)
+		VALUES(?, ?, ?, ?, ?, ?, ?, ?)
+	</entry>
+</properties>

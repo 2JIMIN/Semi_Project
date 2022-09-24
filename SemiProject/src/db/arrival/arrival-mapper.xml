@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+	<entry key="selectAsia1">
+		SELECT ARRIVAL_CITY
+		FROM ARRIVAL
+		JOIN COUNTRY USING(COUNTRY_CODE)
+		WHERE CONTINENT = '동북아시아'
+	</entry>
+	
+	<entry key="selectAsia2">
+		SELECT ARRIVAL_CITY
+		FROM ARRIVAL
+		JOIN COUNTRY USING(COUNTRY_CODE)
+		WHERE CONTINENT = '동남아시아'
+	</entry>
+	
+	<entry key="selectEtc">
+		SELECT ARRIVAL_CITY
+		FROM ARRIVAL
+		JOIN COUNTRY USING(COUNTRY_CODE)
+		WHERE CONTINENT = '미주/대양주'
+	</entry>
+	
+	<entry key="selectEurope">
+		SELECT ARRIVAL_CITY
+		FROM ARRIVAL
+		JOIN COUNTRY USING(COUNTRY_CODE)
+		WHERE CONTINENT = '유럽'
+	</entry>
+</properties>

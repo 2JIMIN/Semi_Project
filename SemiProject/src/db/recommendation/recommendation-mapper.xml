@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+	<entry key="adInsertBoard">
+		INSERT INTO BOARD(BOARD_NO
+						 ,BOARD_TYPE
+           				 ,BOARD_TITLE
+           				 ,BOARD_CONTENT
+           				 ,ANSWER_STATUS
+           				 ,COUNT
+           				 ,COUNTRY_CODE)
+		VALUES (SEQ_BNO.NEXTVAL
+				,4
+           		,?
+           		,?
+           		,NULL
+           		,0
+           		,?)
+	</entry>
+	
+	<!-- 페이징처리시 전체 게시글 -->
+	<entry key="listCount">
+		SELECT COUNT(*) COUNT
+		FROM BOARD
+		WHERE BOARD_TYPE='4'
+		AND STATUS = 'Y'
+	</entry>
+	
+	<!-- 페이징처리시 한페이지글에 출력될 값 -->
+	<entry key="pageinfoList">
+		SELECT*
+		 FROM(
+		     SELECT ROWNUM RNUM,A.*
+		     FROM
+		        (
+		        SELECT BOARD_NO,BOARD_TYPE,BOARD_TITLE,BOARD_CONTENT,CREATE_DATE,COUNT,COUNTRY_CODE,CONTINENT
+		        FROM BOARD
+		        LEFT JOIN COUNTRY USING(COUNTRY_CODE)
+		        WHERE BOARD_TYPE = '4'
+		        AND STATUS = 'Y'
+		        ORDER BY BOARD_NO DESC
+		        ) A
+		    )	
+		WHERE RNUM BETWEEN ? AND ?
+	</entry>
+	
+	<entry key="selectDetail">
+		SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENT, CONTINENT
+		FROM BOARD B
+		JOIN COUNTRY C ON B.COUNTRY_CODE=C.COUNTRY_CODE
+		WHERE BOARD_NO = ?
+	</entry>
+	
+	<!-- 게시글 수정화면 가져올 정보 -->	
+	<entry key="adminSelectBoard">
+		SELECT BOARD_NO, BOARD_TITLE, BOARD_CONTENT, B.COUNTRY_CODE, CONTINENT, COUNTRY_KOR
+		FROM BOARD B
+		JOIN COUNTRY C ON B.COUNTRY_CODE=C.COUNTRY_CODE
+		WHERE BOARD_NO = ?
+		AND STATUS = 'Y'
+	</entry>
+	
+	<!-- 게시글 수정 -->
+	<entry key="updateRecommendationBoard">
+		UPDATE BOARD
+		SET BOARD_TITLE = ?
+		   ,BOARD_CONTENT = ?
+		WHERE BOARD_NO = ?
+		AND STATUS = 'Y'
+	</entry>
+	
+	<!-- 게시글 삭제 -->
+	<entry key="deleteRecommendationBoard">
+		UPDATE BOARD
+		SET STATUS = 'N'
+		WHERE BOARD_NO = ?
+	</entry>
+	
+	<!-- 조회수 증가(추천여행지게시글만 적용) -->
+	<entry key="increaseCount">
+		UPDATE BOARD 
+		SET COUNT = COUNT+1
+		WHERE BOARD_NO = ?
+		AND BOARD_TYPE = '4'
+		AND STATUS = 'Y'
+	</entry>
+	
+	<!-- 유저/게시글 클릭시 디테일정보 -->
+	<entry key="selectBoard">
+		SELECT BOARD_NO,BOARD_TITLE,BOARD_CONTENT,CREATE_DATE,COUNT,B.COUNTRY_CODE, CONTINENT
+		FROM BOARD B
+		JOIN COUNTRY C ON B.COUNTRY_CODE=C.COUNTRY_CODE
+		WHERE BOARD_NO = ?
+		AND STATUS = 'Y'
+	</entry>
+	
+	<!-- COUNTRY에 있는 모든 국가를 출력 -->
+	<entry key="registerRecommendationCountryList">
+		SELECT DISTINCT CONTINENT, COUNTRY_KOR, COUNTRY_ENG, C.COUNTRY_CODE
+		FROM BOARD B, COUNTRY C
+		WHERE C.COUNTRY_CODE=B.COUNTRY_CODE(+)
+	</entry>
+	
+	<!-- 대륙별 게시판 목록 출력 -->
+	<entry key="listArea1">
+		SELECT*
+		FROM(
+		     SELECT ROWNUM RNUM,A.*
+		     FROM
+		        (
+		        SELECT BOARD_NO,BOARD_TYPE,BOARD_TITLE,BOARD_CONTENT,CREATE_DATE,COUNT,COUNTRY_CODE,CONTINENT
+		        FROM BOARD
+		        LEFT JOIN COUNTRY USING(COUNTRY_CODE)
+		        WHERE BOARD_TYPE = '4'
+		        AND STATUS = 'Y'
+                AND CONTINENT = '국내'
+		        ORDER BY BOARD_NO DESC
+		        ) A
+		    )	
+		WHERE RNUM BETWEEN ? AND ?
+	</entry>
+	<entry key="listArea2">
+		SELECT*
+		FROM(
+		     SELECT ROWNUM RNUM,A.*
+		     FROM
+		        (
+		        SELECT BOARD_NO,BOARD_TYPE,BOARD_TITLE,BOARD_CONTENT,CREATE_DATE,COUNT,COUNTRY_CODE,CONTINENT
+		        FROM BOARD
+		        LEFT JOIN COUNTRY USING(COUNTRY_CODE)
+		        WHERE BOARD_TYPE = '4'
+		        AND STATUS = 'Y'
+                AND CONTINENT = '동북아시아'
+		        ORDER BY BOARD_NO DESC
+		        ) A
+		    )	
+		WHERE RNUM BETWEEN ? AND ?
+	</entry>
+		<entry key="listArea3">
+		SELECT*
+		FROM(
+		     SELECT ROWNUM RNUM,A.*
+		     FROM
+		        (
+		        SELECT BOARD_NO,BOARD_TYPE,BOARD_TITLE,BOARD_CONTENT,CREATE_DATE,COUNT,COUNTRY_CODE,CONTINENT
+		        FROM BOARD
+		        LEFT JOIN COUNTRY USING(COUNTRY_CODE)
+		        WHERE BOARD_TYPE = '4'
+		        AND STATUS = 'Y'
+                AND CONTINENT = '동남아시아'
+		        ORDER BY BOARD_NO DESC
+		        ) A
+		    )	
+		WHERE RNUM BETWEEN ? AND ?
+	</entry>
+		<entry key="listArea4">
+		SELECT*
+		FROM(
+		     SELECT ROWNUM RNUM,A.*
+		     FROM
+		        (
+		        SELECT BOARD_NO,BOARD_TYPE,BOARD_TITLE,BOARD_CONTENT,CREATE_DATE,COUNT,COUNTRY_CODE,CONTINENT
+		        FROM BOARD
+		        LEFT JOIN COUNTRY USING(COUNTRY_CODE)
+		        WHERE BOARD_TYPE = '4'
+		        AND STATUS = 'Y'
+                AND CONTINENT = '미주/대양주'
+		        ORDER BY BOARD_NO DESC
+		        ) A
+		    )	
+		WHERE RNUM BETWEEN ? AND ?
+	</entry>
+		<entry key="listArea5">
+		SELECT*
+		FROM(
+		     SELECT ROWNUM RNUM,A.*
+		     FROM
+		        (
+		        SELECT BOARD_NO,BOARD_TYPE,BOARD_TITLE,BOARD_CONTENT,CREATE_DATE,COUNT,COUNTRY_CODE,CONTINENT
+		        FROM BOARD
+		        LEFT JOIN COUNTRY USING(COUNTRY_CODE)
+		        WHERE BOARD_TYPE = '4'
+		        AND STATUS = 'Y'
+                AND CONTINENT = '유럽'
+		        ORDER BY BOARD_NO DESC
+		        ) A
+		    )	
+		WHERE RNUM BETWEEN ? AND ?
+	</entry>
+
+
+</properties>

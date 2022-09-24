@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+	<entry key="searchFlight">
+		SELECT AIRLINE, A.DEP_CODE, DEP_CITY, A.ARRIVAL_CODE, ARRIVAL_CITY, DEP_TIME, ARRIVAL_TIME, WHOLE_TIME, PRICE, NONSTOP_FLIGHT_YN, TRANSFER, WAITING_TIME, A.FLIGHT_NO
+		FROM AIR_SCHEDULE A
+		JOIN DEPARTURE D ON(A.DEP_CODE = D.DEP_CODE)
+		JOIN ARRIVAL R ON(A.ARRIVAL_CODE = R.ARRIVAL_CODE)
+		WHERE DEP_CITY = ? AND ARRIVAL_CITY = ? AND DEP_DATE = ?
+	</entry>
+	<entry key="addFlight">
+		INSERT INTO AIR_SCHEDULE (REG_NO, FLIGHT_NO, AIRLINE, DEP_CODE, DEP_DATE, DEP_TIME, ARRIVAL_CODE, ARRIVAL_DATE, ARRIVAL_TIME, WHOLE_TIME, PRICE, NONSTOP_FLIGHT_YN, TRANSFER, WAITING_TIME)
+		VALUES (SEQ_AIRNO.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+	</entry>
+	<entry key="searchFlight1">
+		SELECT FLIGHT_NO, DEP_CODE, ARRIVAL_CODE, DEP_DATE, DEP_TIME, ARRIVAL_DATE, ARRIVAL_TIME, PRICE
+		FROM AIR_SCHEDULE 
+		WHERE FLIGHT_NO = ? AND DEP_DATE = ?
+	</entry>
+	<entry key="updateFlight">
+		UPDATE AIR_SCHEDULE
+		SET DEP_DATE = ?, DEP_TIME = ?, ARRIVAL_DATE = ?, ARRIVAL_TIME = ?, PRICE = ?
+		WHERE FLIGHT_NO = ?
+	</entry>
+	<entry key="deleteFlight">
+		DELETE FROM AIR_SCHEDULE
+		WHERE FLIGHT_NO = ? AND DEP_DATE = ?
+	</entry>
+</properties>

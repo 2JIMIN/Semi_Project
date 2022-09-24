@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+	<entry key="quarantineCity">
+		SELECT COUNTRY_KOR, COUNTRY_ENG, DEP_VY_PCR, DEP_VN_PCR, ARR_VY_PCR, ARR_VN_PCR, ARR_VY_SELF, ARR_VN_SELF
+		FROM QUARANTINE
+		JOIN COUNTRY USING(COUNTRY_CODE)
+		JOIN ARRIVAL USING(COUNTRY_CODE)
+		WHERE ARRIVAL_CITY = ?
+	</entry>
+	<!-- 사용자화면 탭 대륙별 셀렉문 -->
+	<entry key="quarantineInfoList">
+		SELECT COUNTRY_KOR, COUNTRY_ENG, DEP_VY_PCR, DEP_VN_PCR, ARR_VY_PCR, ARR_VN_PCR, ARR_VY_SELF, ARR_VN_SELF
+		FROM QUARANTINE
+		LEFT JOIN COUNTRY USING(COUNTRY_CODE)
+ 		WHERE CONTINENT=?
+	</entry>
+	<entry key="quarantineContinent-tap1">
+		SELECT COUNTRY_KOR, COUNTRY_ENG, DEP_VY_PCR, DEP_VN_PCR, ARR_VY_PCR, ARR_VN_PCR, ARR_VY_SELF, ARR_VN_SELF
+		FROM QUARANTINE
+		LEFT JOIN COUNTRY USING(COUNTRY_CODE)
+ 		WHERE CONTINENT='동북아시아'
+	</entry>
+	<entry key="quarantineContinent-tap2">
+		SELECT COUNTRY_KOR, COUNTRY_ENG, DEP_VY_PCR, DEP_VN_PCR, ARR_VY_PCR, ARR_VN_PCR, ARR_VY_SELF, ARR_VN_SELF
+		FROM QUARANTINE
+		LEFT JOIN COUNTRY USING(COUNTRY_CODE)
+		WHERE CONTINENT='동남아시아'
+	</entry>
+	<entry key="quarantineContinent-tap3">
+		SELECT COUNTRY_KOR, COUNTRY_ENG, DEP_VY_PCR, DEP_VN_PCR, ARR_VY_PCR, ARR_VN_PCR, ARR_VY_SELF, ARR_VN_SELF
+		FROM QUARANTINE
+		LEFT JOIN COUNTRY USING(COUNTRY_CODE)
+		WHERE CONTINENT='미주/대양주'
+	</entry>
+	<entry key="quarantineContinent-tap4">
+		SELECT COUNTRY_KOR, COUNTRY_ENG, DEP_VY_PCR, DEP_VN_PCR, ARR_VY_PCR, ARR_VN_PCR, ARR_VY_SELF, ARR_VN_SELF
+		FROM QUARANTINE
+		LEFT JOIN COUNTRY USING(COUNTRY_CODE)
+		WHERE CONTINENT='유럽'
+	</entry>
+	
+	<entry key="adminselectList">
+		SELECT CONTINENT, COUNTRY_KOR, COUNTRY_CODE, UPDATE_DATE
+		FROM QUARANTINE Q
+		LEFT JOIN COUNTRY USING(COUNTRY_CODE)
+	</entry>
+	
+	<!-- 페이징처리용 -->
+	<entry key="adminListCount">
+		SELECT COUNT(*) COUNT
+		FROM QUARANTINE
+	</entry>
+	
+	<entry key="adminPageinfoList">
+		SELECT*
+	   		 FROM(
+	       		 SELECT ROWNUM RNUM,A.*
+	       		 FROM
+	        		(
+                    SELECT CONTINENT,COUNTRY_CODE,COUNTRY_KOR,UPDATE_DATE
+                    FROM QUARANTINE
+                    JOIN COUNTRY USING(COUNTRY_CODE)
+                    ORDER BY COUNTRY_CODE
+                    ) A
+	        	)	
+		WHERE RNUM BETWEEN ? AND ?
+	</entry>
+	
+	<entry key="selectDetail">
+		SELECT COUNTRY_CODE, DEP_VY_PCR, DEP_VN_PCR, ARR_VY_PCR, ARR_VN_PCR, ARR_VY_SELF, ARR_VN_SELF, UPDATE_DATE
+		FROM QUARANTINE
+		WHERE COUNTRY_CODE = ?
+	</entry>
+	
+	<entry key="insertQuarantine">
+		INSERT INTO QUARANTINE(COUNTRY_CODE,DEP_VY_PCR,DEP_VN_PCR,ARR_VY_PCR,ARR_VN_PCR,ARR_VY_SELF,ARR_VN_SELF,UPDATE_DATE)
+		VALUES (?,?,?,?,?,?,?,SYSDATE)
+	</entry>
+	
+	<!-- COUNTRY에 있는 모든 국가를 출력 -->
+	<entry key="registerQuarantineCountryList">
+		SELECT C.COUNTRY_CODE, COUNTRY_KOR, COUNTRY_ENG,CONTINENT
+		FROM COUNTRY C
+		LEFT OUTER JOIN QUARANTINE Q ON C.COUNTRY_CODE=Q.COUNTRY_CODE
+		WHERE Q.COUNTRY_CODE IS NULL
+	</entry>
+
+	<!-- 방역 수정화면 가져올 정보 -->	
+	<entry key="adminSelectInfo">
+		SELECT COUNTRY_CODE, DEP_VY_PCR, DEP_VN_PCR, ARR_VY_PCR, ARR_VN_PCR, ARR_VY_SELF, ARR_VN_SELF, UPDATE_DATE
+		FROM QUARANTINE
+		WHERE COUNTRY_CODE = ?
+	</entry>
+	
+	<!-- 방역정보 수정 -->
+	<entry key="updateQuarantineInfo">
+		UPDATE QUARANTINE
+		SET DEP_VY_PCR = ?
+		   ,DEP_VN_PCR = ?
+		   ,ARR_VY_PCR = ?
+		   ,ARR_VN_PCR = ?
+		   ,ARR_VY_SELF = ?
+		   ,ARR_VN_SELF = ?
+		   ,UPDATE_DATE = SYSDATE
+		WHERE COUNTRY_CODE = ?
+	</entry>
+	
+	<!-- 방역정보 삭제 -->
+	<entry key="deleteQuarantineInfo">
+		DELETE FROM QUARANTINE
+		WHERE COUNTRY_CODE = ?
+	</entry>
+</properties>

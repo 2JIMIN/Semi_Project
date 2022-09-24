@@ -1,0 +1,182 @@
+#header{
+    width: 1000px;
+    height: 120px;
+    margin: auto;
+}
+#header>div{
+    float: left;
+    height: 100%;
+}
+#header_1{
+    width: 15%;
+    position: relative;
+}
+#logo{
+    position: absolute;
+    margin: auto;
+    height: 55%;
+    width: 80%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+#header_2{
+    width: 65%;
+    position: relative;
+}
+#header_2>p{
+    margin: auto;
+    position: absolute;
+    height: 60%;
+    width:80%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    font-size: 45px;
+    vertical-align: middle;
+    font-weight: bold;
+    margin-left: 15px;
+}
+#header_3{
+    width: 20%;
+    text-align: center;
+    position: relative;
+}
+#login{
+    position: absolute;
+    margin: auto;
+    height: 55%;
+    width:80%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+#login>div> a{
+    height: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+}
+#logout:hover{
+    font-weight: bold;
+}
+#content{
+    width: 1000px;
+    height: 680px;
+    margin: auto;
+    position: relative;
+}
+#content_1{
+	float: left;
+    width: 15%;
+    height: 100%;
+    background-color: rgb(154, 222, 226);
+}
+#content_1>div{
+    height: 49px;
+    padding-top: 19px;
+}
+.userMenu, .menu{
+    background-color: rgb(154, 222, 226);
+    width: 100%;
+    height: auto;
+    text-align: center;
+    cursor: pointer;
+    font-size: large;
+}
+.subarea{
+    background-color: rgb(110, 178, 182);
+    width: 100%;
+    display: none;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+}
+.userMenu>a, .subarea a{
+    text-decoration: none;
+    color: black;
+}
+.userMenu a:hover, .menu:hover, p a:hover{
+    font-weight: bold;
+}
+#content_2{
+	float: left;
+	position: absolute;
+	top: 0;
+	left: 150px;
+    width: 820px;
+    height: 100%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+#content_2{
+    width: 5%;
+}
+#content_3{
+    width: 55%;
+    text-align : left;
+}
+
+#content_4{
+    width: 25%;
+}
+/* body 끝 */
+
+/* 로고 시작 */
+#header_1{
+    position: relative;
+}
+
+#logo{
+    /* padding: 50px 0px 0px 40px; */
+    margin: auto;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+}
+#logo2{
+    padding: 0px;
+    margin: 0px;
+    width: 50%;
+    height: 20%;
+
+}
+/* 로고 끝 */
+
+div>table{
+    border: 1px solid none;
+    font-size: 15px;
+    color: rgb(154, 222, 226);
+    font-weight: 1000;            
+}
+div>table td{
+    padding: 20px;
+}
+div>table#adminReservePage td{
+    border: 1px solid none;
+    padding: 10px;
+}
+div>table#adminReserve td{
+    border: 1px solid none;
+    color: black;
+}
+div button{
+	color:white;
+	background-color : rgb(154, 222, 226);
+	border-color : rgb(154, 222, 226);
+}
+div #reservtionNum{
+	border: 2px solid rgb(154, 222, 226);
+}
+div #reservtionCheck{
+	padding-left: 20px;
+}

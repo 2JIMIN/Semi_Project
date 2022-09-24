@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+	<entry key="selectListCount">
+		SELECT COUNT(*) COUNT
+		FROM BOARD
+		WHERE STATUS='Y'
+		AND BOARD_TYPE=3
+	</entry>
+	
+	<entry key="selectList">
+		SELECT *
+		FROM(
+		SELECT ROWNUM RNUM2,B.*
+		FROM(
+		SELECT *
+		FROM(
+		SELECT ROWNUM RNUM,A.*
+		FROM
+		(
+		SELECT BOARD_NO,CATEGORY_NAME,BOARD_TITLE,USER_ID,CREATE_DATE,ANSWER_STATUS
+		FROM BOARD B
+		JOIN USER_INFO ON (BOARD_WRITER=USER_NO)
+		JOIN CATEGORY USING (CATEGORY_NO)
+		WHERE B.STATUS='Y'
+		AND BOARD_TYPE = '3'
+		ORDER BY CREATE_DATE ASC) A)
+		ORDER BY RNUM DESC) B)
+		WHERE RNUM2 BETWEEN ? AND ?
+	</entry>
+	
+	<entry key="selectCategoryList">
+		SELECT CATEGORY_NO,CATEGORY_NAME
+		FROM CATEGORY
+		WHERE CATEGORY_NO BETWEEN 40 AND 42
+	</entry>
+	
+	<entry key="insertBoard">
+		INSERT INTO BOARD(BOARD_NO,BOARD_WRITER,CATEGORY_NO,BOARD_TYPE,BOARD_TITLE,BOARD_CONTENT)
+		VALUES(SEQ_BNO.NEXTVAL,?,?,3,?,?)
+	</entry>
+	
+	<entry key="selectBoard">
+		SELECT CATEGORY_NAME,
+              BOARD_NO,
+              BOARD_TITLE,
+              BOARD_CONTENT,
+              USER_ID,
+              CREATE_DATE
+      FROM BOARD B
+      LEFT JOIN CATEGORY USING (CATEGORY_NO)
+      JOIN USER_INFO ON (BOARD_WRITER=USER_NO)
+      WHERE BOARD_NO = ?
+      AND BOARD_TYPE = 3
+      AND B.STATUS = 'Y'
+	</entry>
+		<entry key="selectBoard">
+		SELECT *
+		FROM(
+		SELECT B.*
+		FROM(
+		SELECT *
+		FROM(
+		SELECT A.*, ROWNUM RNUM
+		FROM
+		(
+		SELECT BOARD_NO,CATEGORY_NAME,BOARD_TITLE,BOARD_CONTENT,USER_ID,CREATE_DATE
+		FROM BOARD B
+		JOIN USER_INFO ON (BOARD_WRITER=USER_NO)
+		JOIN CATEGORY USING (CATEGORY_NO)
+		WHERE B.STATUS='Y'
+		AND BOARD_TYPE = '3'
+		ORDER BY CREATE_DATE ASC) A)
+		ORDER BY RNUM DESC) B)
+		WHERE RNUM = ?
+			
+	</entry>
+	
+	<entry key="updateBoard">
+		UPDATE BOARD
+		SET CATEGORY_NO = ?
+		    ,BOARD_TITLE = ?
+		    ,BOARD_CONTENT =?
+		WHERE BOARD_NO =?
+		AND STATUS = 'Y'
+		AND BOARD_TYPE=3
+	</entry>
+	
+	<entry key="deleteBoard">
+		UPDATE BOARD
+		SET STATUS = 'N'
+		WHERE BOARD_NO = ?
+	</entry>
+	
+	<entry key="adminselectBoard">
+	SELECT *
+		FROM(
+		SELECT B.*
+		FROM(
+		SELECT *
+		FROM(
+		SELECT A.*, ROWNUM RNUM
+		FROM
+		(
+		SELECT BOARD_NO,CATEGORY_NAME,BOARD_TITLE,BOARD_CONTENT,USER_ID,CREATE_DATE,EMAIL,PHONE
+		FROM BOARD B
+		JOIN USER_INFO ON (BOARD_WRITER=USER_NO)
+		JOIN CATEGORY USING (CATEGORY_NO)
+		WHERE B.STATUS='Y'
+		AND BOARD_TYPE = '3'
+		ORDER BY CREATE_DATE ASC) A)
+		ORDER BY RNUM DESC) B)
+		WHERE RNUM = ?
+	</entry>
+	
+	<entry key="selectReplyList">
+		SELECT REPLY_NO,REPLY_CONTENT,USER_ID,R.CREATE_DATE
+		FROM REPLY R
+		JOIN BOARD ON (REF_BNO = BOARD_NO)
+		JOIN USER_INFO ON(BOARD_WRITER = USER_NO)
+		WHERE R.STATUS='Y'
+		AND REF_BNO = ?
+	</entry>
+	
+	<entry key="insertReply">
+		INSERT INTO REPLY (REPLY_NO,REPLY_CONTENT,REF_BNO)
+		VALUES(SEQ_RNO.NEXTVAL,?,?)
+	
+	</entry>
+	
+	<entry key="updateAnswerStatus">
+		UPDATE BOARD
+		SET ANSWER_STATUS='답변완료'
+		WHERE BOARD_NO =?
+	</entry>
+</properties>

@@ -1,0 +1,233 @@
+/* 공통 영역 */
+#header{
+    width: 1000px;
+    height: 120px;
+    margin: auto;
+}
+#header>div{
+    float: left;
+    height: 100%;
+}
+#header_1{
+    width: 15%;
+    position: relative;
+}
+#logo{
+    position: absolute;
+    margin: auto;
+    height: 55%;
+    width: 80%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+#header_2{
+    width: 65%;
+    position: relative;
+}
+#header_2>p{
+    margin: auto;
+    position: absolute;
+    height: 60%;
+    width:80%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    font-size: 45px;
+    vertical-align: middle;
+    font-weight: bold;
+    margin-left: 15px;
+}
+#header_3{
+    width: 20%;
+    text-align: center;
+    position: relative;
+}
+#login{
+    position: absolute;
+    margin: auto;
+    height: 55%;
+    width:80%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+#login>div> a{
+    height: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+}
+#logout:hover{
+    font-weight: bold;
+}
+#content{
+    width: 1000px;
+    height: 680px;
+    margin: auto;
+    position: relative;
+}
+#content_1{
+	float: left;
+    width: 15%;
+    height: 100%;
+    background-color: rgb(154, 222, 226);
+}
+#content_1>div{
+    height: 49px;
+    padding-top: 19px;
+}
+.userMenu, .menu{
+    background-color: rgb(154, 222, 226);
+    width: 100%;
+    height: auto;
+    text-align: center;
+    cursor: pointer;
+    font-size: large;
+}
+.subarea{
+    background-color: rgb(110, 178, 182);
+    width: 100%;
+    display: none;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+}
+.userMenu>a, .subarea a{
+    text-decoration: none;
+    color: black;
+}
+.userMenu a:hover, .menu:hover, p a:hover{
+    font-weight: bold;
+}
+#content_2{
+	float: left;
+	position: absolute;
+	top: 0;
+	left: 150px;
+    width: 820px;
+    height: 100%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+
+/* 방역현황관리 전체틀 */
+.outer-search, .outer-list{
+    width: 100%;
+    text-align: center;
+}
+h3{
+    width: 80%;
+    display: inline-block;
+    line-height: 40px;
+}
+
+
+/* 조회 영역 */
+.search{
+    width: 80%;
+    height: 20%;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    display: inline-block;
+}
+.searchCountry, .searchContinent{
+    margin-top: 5%;
+    margin-bottom: 0%;
+}
+.inputTitle{
+    font-size: 15px;
+    width: 10%;
+    margin: 0 auto;
+    line-height: 3px;
+}
+.searchSelect{
+    width: 50%;
+}
+
+
+/* 버튼 관련 */
+button{
+    cursor:pointer;
+}
+#searchBtn{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-left: 70%;
+    background-color: rgb(154, 222, 226);
+    width: 70px;
+    height: 40px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+}
+#insertBtn, #updateBtn{
+    background-color: rgb(154, 222, 226);
+    width: 70px;
+    height: 40px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    margin: 1%;
+}
+
+
+/* 등록내역 영역 */
+.inser-list{
+    width: 80%;
+    height: 20%;
+    display: inline-block;
+}
+.title-area{
+    width: 50%;
+    float: left;
+    height: 50px;
+    text-align: right;    
+    /* border: 1px solid blue; */
+}
+.button-area{
+    width: 50%;
+    display:inline-block;
+    padding-right: 10%;
+    height: 50px;
+    text-align: right;    
+    /* border: 1px solid blue; */
+}
+.inser-list{
+    width: 80%;
+}
+.inser-list>table{
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+/* 텍스트 */
+.national_kor{
+    color: black;
+    font-weight: 1000;
+    font-size: large;
+}
+.national_eng{
+    color: gray;
+}
+.text_blue{
+    color: blue;
+}
+.text_green{
+    color: green;
+}
+.text_bold{
+    font-weight: bold;
+}
+

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+	<entry key="loginUserInfo">
+		SELECT *
+		FROM USER_INFO
+		WHERE USER_ID = ?
+		AND USER_PWD = ?
+		AND STATUS ='Y'
+	</entry>
+	
+	<entry key="insertUserInfo">
+		INSERT INTO USER_INFO(USER_NO,
+						  	  USER_ID,
+						      USER_PWD,
+						      USER_NAME,
+						      EMAIL,
+						      PHONE) 
+						      VALUES
+						      (SEQ_USNO.NEXTVAL,
+						      ?,
+						  	  ?,
+						      ?,
+						      ?,
+						      ?)
+		
+	</entry>
+	
+	<entry key="idCheck">
+		SELECT COUNT(*) count  
+		FROM USER_INFO 
+		WHERE USER_ID = ?
+	</entry>
+	
+	<entry key="idSerch">
+		SELECT USER_ID
+		FROM USER_INFO
+		WHERE USER_NAME=?
+		AND PHONE=?
+	</entry>
+	
+	<entry key="pwdSerch">
+		SELECT USER_ID,USER_PWD
+		FROM USER_INFO
+		WHERE USER_ID = ?
+		AND PHONE = ?
+	</entry>
+	
+	<entry key="pwdCheck">
+		UPDATE USER_INFO
+		SET USER_PWD = ?
+		WHERE USER_ID = ?
+	</entry>
+	
+	<entry key="selectUserInfo">
+		SELECT *
+		FROM USER_INFO
+		WHERE USER_ID=?
+		AND STATUS = 'Y'
+	</entry>
+	
+	<entry key="insertNomember">
+	INSERT INTO USER_INFO(USER_NO,					      
+                    USER_NAME,						      
+                    EMAIL,						      
+                    PHONE) 						      
+                    VALUES
+                    (SEQ_USNO.NEXTVAL
+                     ,?
+                     ,?
+                     ,?)
+		
+	</entry>
+	<entry key="naverLogin">
+		INSERT INTO USER_INFO(USER_NO,EMAIL)
+		VALUES (SEQ_USNO.NEXTVAL,?)
+	</entry>
+	<entry key="SearchUser">
+		SELECT *
+		FROM  USER_INFO
+		WHERE STATUS='Y' AND EMAIL= ?
+	</entry>
+	<entry key="loginUser">
+		SELECT * 
+		FROM USER_INFO 
+		WHERE USER_ID = ?
+		 AND USER_PWD= ? 
+		 AND STATUS = 'Y'
+	</entry>
+	
+	<entry key="insertUser">
+		INSERT INTO USER_INFO( USER_ID,
+						   USER_PWD,
+						   USER_NAME,
+						   EMAIL,
+						   PHONE,
+						   ENROLL_DATE) VALUES (?,?,?,?,?,SYSDATE)	
+	</entry>
+	
+	<entry key="selectUser">
+		SELECT * 
+		FROM USER_INFO
+		WHERE USER_ID = ? 
+		AND STATUS = 'Y'
+	</entry>
+	
+	<entry key="updateUser">
+		UPDATE USER_INFO
+		SET USER_NAME = ?
+	       ,EMAIL = ?
+	       ,PHONE = ?
+		WHERE USER_ID = ?
+	</entry>
+	
+	<entry key="selectUser">
+		SELECT * 
+		FROM USER_INFO
+		WHERE USER_ID = ? 
+		AND STATUS = 'Y'	
+	</entry>
+	
+	<entry key="updatePwdUser">
+		UPDATE USER_INFO
+		SET USER_PWD = ? 
+		WHERE USER_ID = ? 
+		AND USER_PWD = ? 
+	</entry>
+	
+	<entry key="deleteUser">
+		UPDATE USER_INFO
+		SET STATUS = 'N' 
+		WHERE USER_ID = ?
+		AND USER_PWD = ?
+	</entry>
+	
+	<entry key="reservationInquriy">
+		SELECT ENROLL_NO,RD.INT_DOM_ID,R.BOOKING_NO,USER_NAME,EMAIL,AI.FLIGHT_NO,DEP_CITY,ARRIVAL_CITY,AI.DEP_DATE,AI.ARRIVAL_DATE
+		FROM RESERVATION R
+		JOIN RESERVATION_DETAIL RD ON (RD.BOOKING_NO = R.BOOKING_NO)
+		JOIN DEPARTURE D USING (DEP_CODE)
+		JOIN USER_INFO U ON (U.USER_NO = R.ENROLL_NO)
+		JOIN AIR_SCHEDULE AI USING (DEP_CODE)
+		JOIN ARRIVAL USING (ARRIVAL_CODE)
+		WHERE R.BOOKING_NO = ? AND AI.FLIGHT_NO = ? AND R.STATUS = 'Y'
+		ORDER BY ENROLL_NO
+	</entry>
+	
+	<entry key="loginNomember">
+		SELECT USER_NO, USER_ID, USER_PWD, USER_NAME, EMAIL, PHONE, ENROLL_DATE
+		FROM USER_INFO
+		JOIN RESERVATION ON(USER_NO = ENROLL_NO)
+		WHERE EMAIL = ? AND BOOKING_NO = ?
+	</entry>
+</properties>

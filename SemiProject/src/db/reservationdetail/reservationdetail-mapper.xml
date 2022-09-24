@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+	<entry key="insertIntOneway">
+		INSERT INTO RESERVATION_DETAIL (BOOKING_NO, LAST_NAME, FIRST_NAME, PASSPORT_NO, VALID_DATE, INT_DOM_ID) 
+		VALUES (SEQ_RESNO.NEXTVAL, ?, ?, ?, ?, '해외')
+	</entry>
+	<entry key="selectBookingNo">
+		SELECT BOOKING_NO
+		FROM RESERVATION_DETAIL
+		WHERE LAST_NAME = ?
+	</entry>
+	<entry key="insertDomOneway">
+		INSERT INTO RESERVATION_DETAIL (BOOKING_NO, PASSENGER_NAME, BIRTH_DATE, INT_DOM_ID) 
+		VALUES (SEQ_RESNO.NEXTVAL, ?, ?, '국내')
+	</entry>
+	<entry key="selectDomBookingNo">
+		SELECT BOOKING_NO
+		FROM RESERVATION_DETAIL
+		WHERE PASSENGER_NAME = ?
+	</entry>
+</properties>

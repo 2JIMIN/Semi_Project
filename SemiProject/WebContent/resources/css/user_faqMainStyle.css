@@ -1,0 +1,352 @@
+#header{
+   width: 1500px;
+   height: 120px;
+   margin: auto;
+}
+#header>div, #content>div{
+    float: left;
+    height: 100%;
+}
+#header_1{
+    width: 15%;
+    position: relative;
+}
+#logo{
+    position: absolute;
+    margin: auto;
+    height: 70%;
+    width: 80%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+#header_2{
+    width: 70%;
+    padding-top: 30px;
+}
+#navi{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+#navi>li{
+    float: left; /*방법1*/
+    height: 100%;
+    width: 16%;
+    text-align: center;
+    /*display: inline-block; /*방법2*/
+    /*vertical-align: top; /*방법2*/
+}
+#navi a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    height: 60%;
+    display: block;
+    line-height: 37px;
+
+    transform: scale(1); /*방법1*/
+}
+#navi a:hover{
+    font-size: 24px;
+    color: rgb(154, 222, 226);
+}
+#navi>li>ul{
+    display: none;
+    list-style-type: none;
+    padding: 0;
+}
+#navi>li>ul a{
+    font-size: 18px;
+    background-color: rgb(241, 241, 241);
+}
+#navi>li>ul a:hover{
+    font-size: 20px;
+    color: rgb(96, 164, 168);
+}
+#navi>li>a:hover+ul{
+    display: block;
+}
+#navi>li>ul:hover{
+    display: block;
+}
+#header_3{
+    width: 15%;
+    padding-right: 5px;
+    text-align: center;
+}
+#header_3> a{
+    text-decoration: none;
+    margin: 5px;
+    font-size: 18px;
+    color: black;
+}
+#content{
+    width: 1500px;
+    height: 840px;
+    margin: auto;
+}
+#content_1{
+    width: 15%;
+    text-align: center;
+}
+#content_2{
+    width: 1050px;
+}
+#content_3{
+    width: 100%;
+}
+#footer{
+    width: 1500px;
+    height: 240px;
+    margin: auto;
+}
+#footer>div{
+    width: 100%;
+}
+#footer_1{
+    height: 25%;
+    padding-top: 8px;
+}
+#footer_2{
+    height: 75%;
+}
+#footer_2>p{
+    width: 100%;
+    margin: 0;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+#p1{
+    height: 80%;
+    padding: 5px 15px;
+}
+#p2{
+    height: 20%;
+    text-align: center;
+}
+#footer_1>a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin: 15px;
+}
+#content_1_1{
+    height: 10%;
+    text-align: left;
+    padding-top: 15px;
+    overflow: visible;
+    width: 180px;
+    height: 60px;
+    line-height: 20px;
+    padding: 20px 12px;
+    background-color: #1a3d89;
+    font-family: "Malgun Gothic";
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+}
+#content_1_2{
+    height: 7%;
+    text-align: left;
+    padding-top: 8px;
+}
+#content_1_3{
+    height: 7%;
+    text-align: left;
+    padding-top: 8px;
+}
+#content_1_4{
+    height: 7%;
+    text-align: left;
+    padding-top: 8px;
+}
+#content_1>div>a{
+    text-decoration: none;
+    color: black;
+    display: block;
+    position: relative;
+    padding: 4.8px 12px;
+    color: #333;
+    font-family: "Malgun Gothic";
+    font-size: 14px;
+    font-weight: 700;
+}
+#content_3_1{
+    height: 6%;
+    line-height: 36px;
+    padding: 0;
+    margin: 0;
+    font-family: "Malgun Gothic";
+    font-size: 20px;
+    font-weight: 700;
+    padding-top: 8px;
+    border-top: 2px solid #1a3d89;
+    border-bottom: 1px solid #dedede;
+}
+#content_3_2{
+    height: 13%;
+    padding-top: 10px;
+}
+#navi2{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+#navi2>li{
+    float: left; /*방법1*/
+    height: 100%;
+    width: 30%;
+    text-align: center;
+    /*display: inline-block; /*방법2*/
+    /*vertical-align: top; /*방법2*/
+}
+#navi2>li{
+    width: 16%;
+}
+#navi2 a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    width: 100%;
+    height: 60%;
+    display: block;
+    line-height: 37px;
+    transform: scale(1); /*방법1*/
+}
+#navi2 a:hover{
+    font-size: 18px;
+    color: rgb(154, 222, 226);
+}
+#navi2>li>div>ul{
+    display: none;
+    list-style-type: none;
+    padding: 0;
+}
+#navi2>li>div>ul a{
+    font-size: 12px;
+}
+#navi2>li>div>ul a:hover{
+    font-size: 15px;
+    color: rgb(96, 164, 168);
+    background-color: rgb(241, 241, 241);
+}
+#navi2>li>a:hover+div>ul{
+    display: block;
+}
+#navi2>li>div>ul:hover{
+    display: block;
+}
+.block>li{
+    float: left;
+}
+#content_3_2_1{
+    width: 550px;
+    height: 35px;
+}
+#content_3_2_2{
+    width: 400px;
+    height: 35px;
+}
+#content_3_3{
+    height: 69px;
+}
+.subarea{
+    width: 100%;
+    display: none;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    border-radius: 10px;
+}
+.menu{
+    border-bottom: 1px solid #e9e9e9;
+    height:45px;
+    padding-top: 15px;
+    font-family: "Malgun Gothic";
+    font-size: 14px;
+    font-weight: 700;
+    width: 864px;
+}
+.menu1{
+    border-bottom: 1px solid #e9e9e9;
+    height:45px;
+    padding-top: 15px;
+    font-family: "Malgun Gothic";
+    font-size: 14px;
+    font-weight: 700;
+    color: #bd3023;
+    width: 864px;
+}
+.subarea{
+    font-family: "Malgun Gothic";
+    font-size: 14px;
+}
+.content_3_4{
+    height: 50px;
+    padding-top: 10px;
+    border-top: 2px solid #1a3d89;
+}
+.content_3_5{
+    height: 50px;
+    text-align: right;
+    padding-top: 3px;
+    border-top: 2px solid #1a3d89;
+}
+.btn{
+    color: #333;
+    background-color: #fff;
+    border-color: #b1b1b1;
+    margin-bottom: 0;
+    text-align: center;
+    cursor: pointer;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    border-radius: 3px;
+    font-weight: 400;
+}
+.form-control{
+    height: 31px;
+    width: 250px;
+    line-height: 36px;
+    margin: 0;
+    border: 0;
+    border-bottom: 1px solid rgba(0,0,0,.42);
+    border-radius: 0;
+    background: #f5f5f5;
+    font-family: "Malgun Gothic";
+    font-size: 12px;
+    color: rgba(0,0,0,.87);
+}
+.v1{
+    display: inline-block;
+}
+.checkmark{
+    float:right;
+    width: 50px;
+    height: 45px;
+    font-size: 25px;
+    text-align: center;
+    color: #bd3023;
+}
+.checkmark:hover{
+	cursor: pointer;
+    font-weight: bold;
+}
+#cs>a{
+    color: rgb(154, 222, 226) !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+    border-bottom: 3px solid rgb(154, 222, 226);
+}
